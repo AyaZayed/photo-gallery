@@ -1,14 +1,13 @@
-import { Routes, Route } from 'react-router-dom'
+import UploadForm from './components/UploadForm'
 import './css/App.css'
 
 export default function App() {
   return (
     <>
-      <Routes>
-        {/* <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Home />} />
-        </Route> */}
-      </Routes>
+      <h1>Photo Gallery</h1>
+      <div className="App">
+        <UploadForm />
+      </div>
     </>
   )
 }

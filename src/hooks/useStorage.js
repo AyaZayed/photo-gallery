@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { storage, ref, uploadBytesResumable, getDownloadURL } from "../data.js";
+import {
+    storage, ref, uploadBytesResumable, getDownloadURL, Timestamp, doc, addDoc, db, collection
+} from "../data.js";
 
 function useStorage(file) {
     const [progress, setProgress] = useState(0)
@@ -18,6 +20,9 @@ function useStorage(file) {
             setError(err)
         }, async () => {
             const url = await getDownloadURL(uploadTask.snapshot.ref)
+            const createdAt = Timestamp.now()
+            // add image with random id
+            await addDoc(collection(db, 'images'), { url, createdAt })
             setUrl(url)
         })
     }, [file])

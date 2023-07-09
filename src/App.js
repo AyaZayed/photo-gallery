@@ -3,13 +3,13 @@ import './css/App.css'
 import ImagesList from './components/ImagesList'
 
 export default function App() {
+  const headerSvg = new URL('../public/header.svg', import.meta.url).href
   return (
-    <>
-      <h1>Photo Gallery</h1>
-      <div className="App">
-        <UploadForm />
-        <ImagesList />
-      </div>
-    </>
+    <div className="App">
+      <img src={headerSvg} alt="firegram" className="header" />
+      <p>Feel free to add your own images</p>
+      <UploadForm />
+      <ImagesList />
+    </div>
   )
 }

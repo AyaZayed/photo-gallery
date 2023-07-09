@@ -1,4 +1,66 @@
+.App {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.header {
+    height: 150px;
+}
+
+.upload-form {
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upload-form input[type='file'] {
+    display: none;
+}
+
+.upload-form label {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-weight: 600;
+    font-size: var(--h3);
+    padding: .1rem .8rem;
+    cursor: pointer;
+}
+
+.upload-form .output .error,
+.upload-form .output .name {
+    margin-bottom: 1rem;
+}
+
 .progress-bar {
-    background-color: bisque;
+    background-color: var(--primary-color);
     height: 5px;
+}
+
+.imgs-list {
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+}
+
+.imgs-list .img-wrap img {
+    width: 100%;
+    height: 15rem;
+}
+
+@media (min-width: 768px) {
+    .imgs-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

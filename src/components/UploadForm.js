@@ -18,13 +18,13 @@ export default function UploadForm() {
         }
     }
     return (
-        <form>
+        <form className='upload-form'>
             <label htmlFor='file'>
                 +
                 <input type="file" id='file' accept={types} onChange={handleAdd} />
             </label>
             <div className="output">
-                {file && <div>{file.name}</div>}
+                {file && <div className='name'>{file.name}</div>}
                 {error && <div className='error'>{error}</div>}
                 {file && <ProgressBar file={file} setFile={setFile} />}
             </div>

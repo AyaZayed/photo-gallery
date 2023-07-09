@@ -9,9 +9,9 @@
   --h2: calc(var(--h3) * var(--type-scale));
   --h1: calc(var(--h2) * var(--type-scale));
   --font-small: calc(0.667rem);
-  --font-family: 'Open Sans', sans-serif;
+  --font-family: 'Noto Sans', sans-serif;
   /* colors */
-
+  --primary-color: #ffa69e;
 }
 
 html {
@@ -51,10 +51,10 @@ p {
   font-size: var(--font-size-basis);
 }
 
-/* ::-moz-selection {
+::-moz-selection {
   background-color: var(--primary-color);
 }
 
 ::selection {
   background-color: var(--primary-color);
-} */
+}

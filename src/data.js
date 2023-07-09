@@ -19,6 +19,4 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-console.log('db', db)
-
 export { db, storage, collection, query, onSnapshot, orderBy, doc, addDoc, ref, uploadBytesResumable, getDownloadURL, Timestamp };

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 export default function ImagesList() {
     const [imgs, setImgs] = useState([])
+
     useEffect(() => {
         async function getDocsFromFirestore() {
             const q = query(collection(db, 'images'), orderBy('createdAt', 'desc'))
@@ -22,7 +23,7 @@ export default function ImagesList() {
     return (
         <div className='imgs-list'>
             {imgs && imgs.map(img => (
-                <div className='img-wrap' key={img.id}>
+                <div className='img-wrap' key={img.id} >
                     <img src={img.url} alt='uploaded pic' />
                 </div>
             ))}

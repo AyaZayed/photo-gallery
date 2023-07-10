@@ -1,8 +1,8 @@
 import React from 'react'
-import { db, getDocs, query, collection, orderBy, onSnapshot } from '../data.js'
+import { db, query, collection, orderBy, onSnapshot } from '../data.js'
 import { useEffect, useState } from 'react'
 
-export default function ImagesList() {
+export default function ImagesList({ setImg }) {
     const [imgs, setImgs] = useState([])
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function ImagesList() {
     return (
         <div className='imgs-list'>
             {imgs && imgs.map(img => (
-                <div className='img-wrap' key={img.id} >
+                <div className='img-wrap' key={img.id} onClick={() => setImg(img.url)} >
                     <img src={img.url} alt='uploaded pic' />
                 </div>
             ))}

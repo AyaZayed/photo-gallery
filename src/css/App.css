@@ -33,13 +33,14 @@
     -o-border-radius: 50%;
     font-weight: 600;
     font-size: var(--h3);
-    padding: .1rem .8rem;
+    padding: .15rem .8rem;
     cursor: pointer;
 }
 
 .upload-form .output .error,
 .upload-form .output .name {
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .progress-bar {
@@ -48,7 +49,7 @@
 }
 
 .imgs-list {
-    padding-top: 2rem;
+    padding-top: 1rem;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 3rem;
@@ -59,8 +60,36 @@
     height: 15rem;
 }
 
+.imgs-list .img-wrap img:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop img {
+    width: 80%;
+    height: 80%;
+    border: 5px solid var(--primary-color);
+}
+
 @media (min-width: 768px) {
     .imgs-list {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .backdrop img {
+        width: 60%;
     }
 }

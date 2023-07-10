@@ -55,6 +55,10 @@
     gap: 3rem;
 }
 
+.imgs-list .img-wrap {
+    opacity: .8;
+}
+
 .imgs-list .img-wrap img {
     width: 100%;
     height: 15rem;
@@ -62,7 +66,6 @@
 
 .imgs-list .img-wrap img:hover {
     cursor: pointer;
-    opacity: .7;
 }
 
 .backdrop {

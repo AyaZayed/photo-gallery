@@ -1,6 +1,7 @@
 import React from 'react'
 import { db, query, collection, orderBy, onSnapshot } from '../data.js'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 export default function ImagesList({ setImg }) {
     const [imgs, setImgs] = useState([])
@@ -23,9 +24,13 @@ export default function ImagesList({ setImg }) {
     return (
         <div className='imgs-list'>
             {imgs && imgs.map(img => (
-                <div className='img-wrap' key={img.id} onClick={() => setImg(img.url)} >
-                    <img src={img.url} alt='uploaded pic' />
-                </div>
+                <motion.div
+                    layout whileHover={{ opacity: 1 }}
+                    className='img-wrap' key={img.id} onClick={() => setImg(img.url)} >
+                    <motion.img
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
+                        src={img.url} alt='uploaded pic' />
+                </motion.div>
             ))}
         </div>
     )

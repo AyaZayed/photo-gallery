@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 export default function Modal({ img, setImg }) {
     const handleBackdrop = (e) => {
@@ -8,8 +10,12 @@ export default function Modal({ img, setImg }) {
     }
 
     return (
-        <div className='backdrop' onClick={handleBackdrop}>
-            <img src={img} alt='enlarged pic' />
-        </div>
+        <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            className='backdrop' onClick={handleBackdrop}>
+            <AnimatePresence>
+                <motion.img initial={{ y: '100vh' }} animate={{ y: 0 }} transition={{ duration: .3 }} src={img} alt='enlarged pic' />
+            </AnimatePresence>
+        </motion.div>
     )
 }
